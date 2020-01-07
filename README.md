@@ -1,0 +1,1 @@
+Creating windows executable  that calling python interpretter from Pyton's script.
