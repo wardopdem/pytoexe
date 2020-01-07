@@ -2,7 +2,7 @@ import sys, os, argparse, pkg_resources
 from . import make_exe
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(description='Адаптация таблицы цен к стандартномку формату с опциональной отправкой на ftp', formatter_class=argparse.RawTextHelpFormatter)
+    parser = argparse.ArgumentParser(description='Создание exe-файла из скрипта на Python (посто запуск python.exe)', formatter_class=argparse.RawTextHelpFormatter)
     src_group = parser.add_mutually_exclusive_group(required=True)
     src_group.add_argument('src', nargs='?', help='исходный файл со скриптом на языке Python')
     src_group.add_argument('-c', '--command', help='явно заданный текст программы')
