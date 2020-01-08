@@ -17,7 +17,7 @@ setuptools.setup(
 
     package_data={'pytoexe': ['exe_mods/*.exe']},#, '../../test.cmd'
 
-    data_files = [("", ["test.cmd"])],
+    #data_files = [("", ["test.cmd"])],
 
     license_file = "LICENSE",
     classifiers=[
