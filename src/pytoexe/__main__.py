@@ -9,6 +9,7 @@ def main(argv=None):
     parser.add_argument('-p', '--platform', default='t32',  help='целевая платформа и тип приложения (t-консоль, w-оконное)', choices=['t32', 't64', 'w32', 'w64'])
     parser.add_argument('-o', '--out-file', help='выходной файл')
     parser.add_argument('-i', '--imbedded', action='store_true', default=False, help='использовать встроенные файлы загрузчика (иначе из пакета PIP)')
+    parser.add_argument('--python-exe', nargs='?', const=True, help='использовать sys.executable (без параметра) или указанный интерпретатор Python')
     parser.error = lambda msg: (parser.print_help(), print('\nОшибка:', msg), exit(-1))
     args = parser.parse_args(argv)
     try:
@@ -31,7 +32,7 @@ def main(argv=None):
     else:
         print('Ошибка: при заданом параметре --command обязательно задание параметра --out-file')
         exit(2)
-    make_exe(args.src or args.command.encode(), out_file, exe_path)
+    make_exe(args.src or args.command.encode(), out_file, exe_path, python_path = args.python_exe or 'python.exe')
 
 if __name__=='__main__':
     main()

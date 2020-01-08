@@ -11,19 +11,24 @@ setuptools.setup(
     description="Creating windows executable  that calling python interpretter from Pyton's script.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    #url="https://github.com/pypa/sampleproject",
+    url="https://github.com/wardopdem/pytoexe",
     packages=setuptools.find_packages('src'),
     package_dir={'':'src'},
-    package_data={'pytoexe': ['exe_mods/*.exe']},
+
+    package_data={'pytoexe': ['exe_mods/*.exe']},#, '../../test.cmd'
+
+    data_files = [("", ["test.cmd"])],
+
+    license_file = "LICENSE",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: Microsoft :: Windows",
     ],
-    python_requires='>=3.6',
+    python_requires=">=3.6",
     entry_points={
-        'console_scripts': [
-            'pytoexe = pytoexe.__main__:main',
+        "console_scripts": [
+            "pytoexe = pytoexe.__main__:main",
         ],
     },
 )
