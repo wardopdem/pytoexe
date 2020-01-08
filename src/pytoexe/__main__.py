@@ -6,7 +6,7 @@ def main(argv=None):
     src_group = parser.add_mutually_exclusive_group(required=True)
     src_group.add_argument('src', nargs='?', help='исходный файл со скриптом на языке Python')
     src_group.add_argument('-c', '--command', help='явно заданный текст программы')
-    parser.add_argument('-p', '--platform', default='t32',  help='целевая платформа', choices=['t32', 't64', 'w32', 'w64'])
+    parser.add_argument('-p', '--platform', default='t32',  help='целевая платформа и тип приложения (t-консоль, w-оконное)', choices=['t32', 't64', 'w32', 'w64'])
     parser.add_argument('-o', '--out-file', help='выходной файл')
     parser.add_argument('-i', '--imbedded', action='store_true', default=False, help='использовать встроенные файлы загрузчика (иначе из пакета PIP)')
     args = parser.parse_args(argv)
