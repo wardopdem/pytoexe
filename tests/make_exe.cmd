@@ -1,1 +1,1 @@
-pytoexe -c "print('Работает!')" -o test
+pytoexe -c "import datetime; print(int(datetime.datetime.now().timestamp()))" -o test
