@@ -1,0 +1,1 @@
+pytoexe -c "print('Работает!')" -o test
